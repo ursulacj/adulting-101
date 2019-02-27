@@ -1,0 +1,56 @@
+<%- include('../partials/header') %>
+
+<table class="pure-table">
+    <thead>
+        <tr></tr>
+            <th colspan="4">My Notebooks</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2">b</td>
+            <td colspan="2">a</td>
+        </tr>
+        <tr>
+            <td colspan="2">b</td>
+            <td colspan="2">a</td>
+        </tr>
+    </tbody>
+
+</table>
+
+<button class="pure-button"><a href="/notes/new">
+    <i class="fas fa-plus-circle"></i> Make a New Note
+</a></button>
+
+<div class="tableWrapper">
+    <table class="pure-table">
+        <thead>
+            <tr>
+                <th colspan="6">My Notes</th> 
+            </tr>
+            <tr>
+                <th>Title</th>
+                <th>Creation Date</th>
+                <th>Last Update</th>
+                <th>Mood</th>
+                <th>Tag</th>
+                <th>Public?</th>
+            </tr>
+        </thead>
+        <tbody>
+                <% notes.forEach(function(n) { %>
+                <tr>
+                    <th><%= n.title %></th>
+                    <th><%= "blank date" %></th>
+                    <th><%= "blank date" %></th>
+                    <th><%= n.mood %></th>
+                    <th><%= n.tag %></th>
+                    <th><%= n.public %></th>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('../partials/footer') %>
