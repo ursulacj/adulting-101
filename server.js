@@ -5,15 +5,19 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override');
 var session = require('express-session');
+var passport = require('passport');
 
-require('./config/database');
 require('dotenv').config();
+
+var app = express();
+
+require('./config/passport');
+require('./config/database');
 
 var homeRouter = require('./routes/home');
 var notesRouter = require('./routes/notes');
 var usersRouter = require('./routes/users');
 
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,6 +34,8 @@ app.use(session({
   saveUninitialized: true
 }));
 
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 

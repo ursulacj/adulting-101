@@ -8,15 +8,6 @@ module.exports = {
     delete: deleteNote,
 }
 
-function deleteNote(req, res) {
-    Note.findByIdAndRemove(req.params.id, function(err, todo) {
-        if (err) return res.status(500).send(err);
-        const response = {
-            message: "Note successfully deleted",
-        };
-    });
-    res.redirect('/notes');
-}
 
 function show(req, res) {
     Note.findById(req.params.id, function(err, notes) {
@@ -51,10 +42,22 @@ function newNote(req, res) {
     res.render('./notes/new');
 }
 
-function index(req, res) {
+function index(req, res, next) {
     Note.find({}, function(err, notes) {
         res.render('./notes', { title: 'Dashboard',
-            notes
+            notes, 
         })
     });
+}
+
+
+
+function deleteNote(req, res) {
+    Note.findByIdAndRemove(req.params.id, function(err, todo) {
+        if (err) return res.status(500).send(err);
+        const response = {
+            message: "Note successfully deleted",
+        };
+    });
+    res.redirect('/notes');
 }
