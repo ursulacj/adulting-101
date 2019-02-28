@@ -2,36 +2,35 @@
 
 <div class="notepad">
     <div class="notepadWrap">
-    <h1>New Note</h1>
-
-    <form name="noteform" action="/notes" method="POST" class="note">
-            <textarea rows="15" cols="75" name="content"></textarea>
-        <br>
-
-        <label>Title: 
-            <input type="text" name="title" required>
-        </label>
-        <label>Mood:
-            <select name="mood">
+        <div class='noteContent'>
+            <form name="noteform" action="/notes" method="POST" class="note">
+                <input type="text" name="title" class="title" required placeholder="Title">
+                <br>
+                    <textarea rows="15" cols="75" name="content" placeholder="content"></textarea>
+                <br>
+            </div>
+    <div class="noteForm">
+        <label class="formContent">Mood:
+            <select name="mood" class="formContent">
                 <option value="Happy">Happy</option>
                 <option value="Sad">Sad</option>
                 <option value="Other">Other</option>
             </select>
         </label><br>
-        <label>Tag:
-            <select name="tag">
+        <label class="formContent">Tag:
+            <select name="tag" class="formContent">
                 <option value="Finance + Career">Finance + Career</option>
                 <option value="Life Skills">Life Skills</option>
                 <option value="Mental Health">Mental Health</option>
                 <option value="Friendship">Friendship</option>
                 <option value="Love + Relationships">Love + Relationships</option>
             </select>
-        <label>Share Note?
-            <input type="checkbox" name="public" value='on'>
+        <label class="formContent share">Share Note?
+            <input type="checkbox" name="public" value='on' class="share">
         </label><br>
-        <input type="submit" value="Save Note">
+        <input type="submit" value="Save Note" class="save">
     </form>
-</div>
+    </div>
 </div>
 
 <%- include('../partials/footer') %>

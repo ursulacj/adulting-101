@@ -7,6 +7,18 @@ body {
   background-color: black;
 }
 
+ul {
+  width: 100%;
+}
+
+.pure-menu-heading {
+  float: right;
+}
+
+.pure-menu-item {
+  padding: 6px 16px;
+}
+
 .body {
   margin: 25px;
 }
@@ -16,23 +28,56 @@ textarea {
   outline: none;
   font-size: 30px;
   background-color: rgba(23,23,23,0);
+  width: 980px;
+  margin-top: 30px;
+  letter-spacing: 1px;
+  line-height: 140%;
   /* box-shadow:2px 2px 10px black, inset 10px 10px 100px rgb(219, 219, 219); */
 }
 
 .notepad {
   background-image: url("https://i.imgur.com/HiZf9eX.png");  
   background-repeat: repeat-y;
-  background-size: 98%
-  margin: -30px;
+  background-size: 82%;
+  margin: -27px;
 }
 
 .notepadWrap {
-  margin: 25px;
+  margin: 0px 210px;
+  display: grid;
+  grid-template-columns: 2fr .5fr;
 }
 
-h1 {
+.noteContent {
+  grid-column: 1 / 2;
+}
+
+.noteForm {
+  grid-column: 2 / 3;
+  margin-top: 200px;
+  padding-left: 20px;
+}
+
+.formContent {
+  margin: 20px 0;
+}
+
+.title {
   font-size: 45px;
   letter-spacing: 1px;
+  border: none;
+  margin-top: 120px;
+  background-color: rgba(23,23,23, 0);
+  outline: none;
+}
+
+input.save {
+  margin-top: 20px;
+  background-color: indianred;
+}
+
+.share {
+  margin-top: 250px;
 }
 
 table {
