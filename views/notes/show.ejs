@@ -1,18 +1,23 @@
 <%- include('../partials/header') %>
 
-<button type="submit"><a href="/notes"><i class="far fa-arrow-alt-circle-left"></i></a></button>
+<div class="notepad">
+    <button type="submit" class="back"><a href="/notes"><i class="far fa-arrow-alt-circle-left fa-5x"></i></a></button>
 
-<div>
-    <%=notes.content %>
+    <div class="notepadWrap">
+        
+        <div class="noteContent">
+        <%=notes.title %>
+        <%=notes.createdAt %>
+        <%=notes.content %>
+        </div>
 
+    </div>
+            <div class="noteForm">
+                <button type="submit"class=>Update Note</button>
+                <form action="/notes/<%= notes._id %>?_method=DELETE" class="delete-form" method="POST">
+                    <button type="submit">Delete Note</button>
+                </form>
+            </div>
 </div>
-
-<div>
-    <button type="submit">Update Note</button>
-    <form action="/notes/<%= notes._id %>?_method=DELETE" class="delete-form" method="POST">
-        <button type="submit">Delete Note</button>
-    </form>
-</div>
-
 
 <%- include('../partials/footer') %>
