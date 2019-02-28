@@ -1,7 +1,18 @@
 <%- include('../partials/header') %>
 
+<button type="submit"><a href="/notes"><i class="far fa-arrow-alt-circle-left"></i></a></button>
 
+<div>
+    <%=notes.content %>
 
+</div>
+
+<div>
+    <button type="submit">Update Note</button>
+    <form action="/notes/<%= notes._id %>?_method=DELETE" class="delete-form" method="POST">
+        <button type="submit">Delete Note</button>
+    </form>
+</div>
 
 
 <%- include('../partials/footer') %>

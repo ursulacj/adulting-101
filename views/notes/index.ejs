@@ -27,9 +27,10 @@
     <table class="pure-table">
         <thead>
             <tr>
-                <th colspan="6">My Notes</th> 
+                <th colspan="7">My Notes</th> 
             </tr>
             <tr>
+                <th></th>
                 <th>Title</th>
                 <th>Creation Date</th>
                 <th>Last Update</th>
@@ -41,12 +42,21 @@
         <tbody>
                 <% notes.forEach(function(n) { %>
                 <tr>
-                    <th><%= n.title %></th>
-                    <th><%= "blank date" %></th>
-                    <th><%= "blank date" %></th>
-                    <th><%= n.mood %></th>
-                    <th><%= n.tag %></th>
-                    <th><%= n.public %></th>
+                    <td>
+                        <form action="/notes/<%= n._id %>?_method=DELETE" class="delete-form" method="POST">
+                            <button type="submit"><i class="fas fa-trash-alt"></i></button>
+                        </form>
+                    </td>
+                    <td><a href="/notes/<%= n._id %>"><%= n.title %></a></td>
+                    <td><%= "blank date" %></td>
+                    <td><%= "blank date" %></td>
+                    <td><%= n.mood %></td>
+                    <td><%= n.tag %></td>
+                    <% if(n.public === true) { %>
+                        <td><i class="fas fa-check-circle"></i></td>
+                    <% } else { %> 
+                        <td></td>
+                    <% } %>
                 </tr>
                 <% }); %>
         </tbody>

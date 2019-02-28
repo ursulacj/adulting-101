@@ -1,6 +1,6 @@
 body {
   padding: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Permanent Marker', monospace;
 }
 
 .navbar {
@@ -9,6 +9,30 @@ body {
 
 .body {
   margin: 25px;
+}
+
+textarea {
+  border: none;
+  outline: none;
+  font-size: 30px;
+  background-color: rgba(23,23,23,0);
+  /* box-shadow:2px 2px 10px black, inset 10px 10px 100px rgb(219, 219, 219); */
+}
+
+.notepad {
+  background-image: url("https://i.imgur.com/HiZf9eX.png");  
+  background-repeat: repeat-y;
+  background-size: 98%
+  margin: -30px;
+}
+
+.notepadWrap {
+  margin: 25px;
+}
+
+h1 {
+  font-size: 45px;
+  letter-spacing: 1px;
 }
 
 table {

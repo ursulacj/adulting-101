@@ -3,10 +3,29 @@ var Note = require('../models/note');
 module.exports = {
     index,
     new: newNote,
-    create
+    create,
+    show,
+    delete: deleteNote,
 }
 
+function deleteNote(req, res) {
+    Note.findByIdAndRemove(req.params.id, function(err, todo) {
+        if (err) return res.status(500).send(err);
+        const response = {
+            message: "Note successfully deleted",
+        };
+    });
+    res.redirect('/notes');
+}
 
+function show(req, res) {
+    Note.findById(req.params.id, function(err, notes) {
+        console.log(notes)
+        res.render('notes/show', {
+            notes
+        })
+    });
+}
 
 function create(req, res) {
     console.log(req.body, '1234');
