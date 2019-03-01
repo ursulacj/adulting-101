@@ -40,12 +40,13 @@ textarea {
   background-repeat: repeat-y;
   background-size: 82%;
   margin: -27px;
+  height: 725px;
 }
 
 .notepadWrap {
   margin: 0px 210px;
   display: grid;
-  grid-template-columns: 2fr .5fr;
+  grid-template-columns: 2fr 1fr;
 }
 
 .noteContent {
@@ -91,9 +92,30 @@ button {
 .back {
   background: none;
   border: none;
-  margin-left: 0;
   outline: none;
   width: 80px;
   height: 80px;
-  margin: 15px;
+  margin: 15px 45px; 
 }
+
+.timeStamp {
+  margin: -100px 210px -55px 0px;
+}
+
+.update {
+  margin: -10px 0;
+}
+
+.updateBtn {
+  float: right;
+  margin: 20px;
+}
+
+.content {
+  font-size: 30px;
+  margin-top: 42px;
+  letter-spacing: 1px;
+  line-height: 140%;
+}
+
+

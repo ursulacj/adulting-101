@@ -2,13 +2,11 @@
 
 <div class="notepad">
     <div class="notepadWrap">
-        <div class='noteContent'>
-            <form name="noteform" action="/notes" method="POST" class="note">
-                <input type="text" name="title" class="title" required placeholder="Title">
-                <br>
-                    <textarea rows="15" cols="75" name="content" placeholder="content"></textarea>
-                <br>
-            </div>
+        <form name="noteform" action="/notes" method="POST" class="note">
+            <input type="text" name="title" class="title" required placeholder="Title">
+            <br>
+                <textarea rows="15" cols="75" name="content" placeholder="content"></textarea>
+            <br>
     <div class="noteForm">
         <label class="formContent">Mood:
             <select name="mood" class="formContent">
@@ -29,6 +27,7 @@
             <input type="checkbox" name="public" value='on' class="share">
         </label><br>
         <input type="submit" value="Save Note" class="save">
+        </div>
     </form>
     </div>
 </div>

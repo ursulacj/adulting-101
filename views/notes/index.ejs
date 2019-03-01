@@ -48,8 +48,8 @@
                         </form>
                     </td>
                     <td><a href="/notes/<%= n._id %>"><%= n.title %></a></td>
-                    <td><%= "blank date" %></td>
-                    <td><%= "blank date" %></td>
+                    <td><%= n.createdAt %></td>
+                    <td><%= n.updatedAt %></td>
                     <td><%= n.mood %></td>
                     <td><%= n.tag %></td>
                     <% if(n.public === true) { %>

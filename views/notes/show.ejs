@@ -2,22 +2,21 @@
 
 <div class="notepad">
     <button type="submit" class="back"><a href="/notes"><i class="far fa-arrow-alt-circle-left fa-5x"></i></a></button>
-
+    
     <div class="notepadWrap">
-        
-        <div class="noteContent">
-        <%=notes.title %>
-        <%=notes.createdAt %>
-        <%=notes.content %>
-        </div>
+        <div class="timeStamp">Date: <%=notes.createdAt %></div>
+        <br>
+        <input type="text" class="title update" value=<%=notes.title %>>
+        <br>
+        <textarea name="update-content" class="content"><%=notes.content%></textarea>
 
+        <div class="updateForm">
+            <button type="submit"class="updateBtn">Update Note</button>
+            <form action="/notes/<%= notes._id %>?_method=DELETE" class="delete-form" method="POST">
+                <button type="submit" class="updateBtn">Delete Note</button>
+            </form>
+        </div>
     </div>
-            <div class="noteForm">
-                <button type="submit"class=>Update Note</button>
-                <form action="/notes/<%= notes._id %>?_method=DELETE" class="delete-form" method="POST">
-                    <button type="submit">Delete Note</button>
-                </form>
-            </div>
 </div>
 
 <%- include('../partials/footer') %>
