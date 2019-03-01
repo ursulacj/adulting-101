@@ -2,11 +2,13 @@
 
 <div class="notepad">
     <div class="notepadWrap">
-        <form name="noteform" action="/notes" method="POST" class="note">
+        <div class="noteContent">
+        <form name="noteform" action="/notes" method="POST">
             <input type="text" name="title" class="title" required placeholder="Title">
             <br>
                 <textarea rows="15" cols="75" name="content" placeholder="content"></textarea>
             <br>
+        </div>
     <div class="noteForm">
         <label class="formContent">Mood:
             <select name="mood" class="formContent">
