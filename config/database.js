@@ -1,13 +1,11 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/index',
-    {useNewUrlParser: true}
-);
+mongoose.connect(process.env.DATABASE_URL, {reconnectInterval: 500});
 
-var db = mongoose.connection;
-
-db.on('connected', function() {
-    console.log(`connected to MongoDB at ${db.host}:${db.port}`);
+// database connection event
+mongoose.connection.on('connected', function () {
+    console.log(`Mongoose connected to: ${process.env.DATABASE_URL}`);
 });
+
 
 module.exports = mongoose;
