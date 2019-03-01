@@ -4,15 +4,38 @@
     <button type="submit" class="back"><a href="/notes"><i class="far fa-arrow-alt-circle-left fa-5x"></i></a></button>
     
     <div class="notepadWrap">
-        <div class="timeStamp">Date: <%=notes.createdAt %></div>
-        <br>
-        <input type="text" class="title update" value=<%=notes.title %>>
-        <br>
-        <textarea name="update-content" class="content"><%=notes.content%></textarea>
+        <div class="timeStamp">Date: <%=notes.createdAt.toDateString(); %></div>
+            <br>
+            
+        <form action="/notes/<%= notes._id %>?_method=PUT" method="POST">
+            <input type="text" name="title" class="title update" value=<%= notes.title %>>
+            <br>
+            <textarea name="update-content" name="content" class="content" rows="15" cols="75">
+                <%=notes.content%>
+            </textarea>
 
-        <div class="updateForm">
-            <button type="submit"class="updateBtn">Update Note</button>
-            <form action="/notes/<%= notes._id %>?_method=DELETE" class="delete-form" method="POST">
+            <div class="updateForm">
+                <label class="formContent">Mood:
+                    <select name="mood" class="formContent">
+                        <option value="Happy">Happy</option>
+                        <option value="Sad">Sad</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    </label><br>
+                <label class="formContent">Tag:
+                    <select name="tag" class="formContent">
+                        <option value="Finance + Career">Finance + Career</option>
+                        <option value="Life Skills">Life Skills</option>
+                        <option value="Mental Health">Mental Health</option>
+                        <option value="Friendship">Friendship</option>
+                        <option value="Love + Relationships">Love + Relationships</option>
+                    </select>
+                <label class="formContent share">Share Note?
+                    <input type="checkbox" name="public" value='on' class="share">
+                </label><br>
+                <button type="submit" class="updateBtn">Update Note</button>
+            </form>
+            <form action="/notes/<%= notes._id %>?_method=DELETE" method="POST">
                 <button type="submit" class="updateBtn">Delete Note</button>
             </form>
         </div>

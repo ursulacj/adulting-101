@@ -44,18 +44,18 @@
                 <tr>
                     <td>
                         <form action="/notes/<%= n._id %>?_method=DELETE" class="delete-form" method="POST">
-                            <button type="submit"><i class="fas fa-trash-alt"></i></button>
+                            <button type="submit" class="indexUpdateBtn"><i class="fas fa-trash-alt fa-2x"></i></button>
                         </form>
                     </td>
                     <td><a href="/notes/<%= n._id %>"><%= n.title %></a></td>
-                    <td><%= n.createdAt %></td>
-                    <td><%= n.updatedAt %></td>
+                    <td><%= n.createdAt.toLocaleDateString() %></td>
+                    <td><%= n.updatedAt.toLocaleDateString() %></td>
                     <td><%= n.mood %></td>
                     <td><%= n.tag %></td>
                     <% if(n.public === true) { %>
-                        <td><i class="fas fa-check-circle"></i></td>
+                        <td><i class="fas fa-check-circle fa-2x"></i></td>
                     <% } else { %> 
-                        <td></td>
+                        <td><i class="fas fa-circle-notch fa-2x"></i></td>
                     <% } %>
                 </tr>
                 <% }); %>
