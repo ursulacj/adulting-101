@@ -25,7 +25,7 @@ function(accessToken, refreshToken, profile, cb) {
             });
         }
     });
-  }
+    }
 ));
 
 passport.serializeUser(function(user, done) {
